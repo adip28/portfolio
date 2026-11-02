@@ -1467,34 +1467,47 @@
         o.style.display='block';
         o.textContent=m
       };
-      $('#f').onsubmit=async e=> {
-        e.preventDefault();
-        const m= {
-          name:$('#fn').value,
-          email:$('#fe').value,
-          phone:$('#fp').value,
-          message:$('#fm').value,
-          at:new Date().toISOString()
-        };
-        try {
-          const db=await claude.use('db'),
-          u=await claude.use('user');
-          if(!db||!u)throw 0;
-          const id=await u.id(),
-          ref=db.collection('messages').doc(id),
-          cur=await ref.get().then(x=>x.exists?x.data(): {
-          }).catch(()=>({
-          }));
-          await ref.set({
-            list:[...(cur.list||[]),m]
-          });
-          ok('✓ Thanks! Your message was sent. I will reply soon.');
-          e.target.reset()
-        } catch(x) {
-          location.href=`mailto:adipdeb97@gmail.com?subject=${encodeURIComponent('Portfolio message from '+m.name)}&body=${encodeURIComponent(m.message+'\n\n'+m.name+'\n'+m.email+'\n'+m.phone)}`;
-          ok('Opening your email app to send this message…')
-        }
-      };
+     
+$('#f').onsubmit = async e => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+
+  const m = {
+    from_name: $('#fn').value.trim(),
+    reply_to: $('#fe').value.trim(),
+    phone: $('#fp').value.trim(),
+    subject: 'Portfolio contact from ' + $('#fn').value.trim(),
+    message: $('#fm').value.trim()
+  };
+
+  if (!m.from_name || !m.reply_to || !m.message) {
+    ok('Please complete your name, email and message.');
+    return;
+  }
+
+  if (!window.emailjs) {
+    ok('Email service could not load. Please try again.');
+    return;
+  }
+
+  try {
+    await emailjs.send(
+      'service_w4crvbk',
+      'template_mjlq3c6',
+      m,
+      { publicKey: 'Ptwzga--e1zmrX72V' }
+    );
+
+    ok('✓ Your message has been sent! I will reply soon.');
+    form.reset();
+
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    ok('Message could not be sent. Please try again later.');
+  }
+};
+
       (async()=> {
         try {
           const u=await claude.use('user'),db=await claude.use('db'); if(!u||!db||!(await u.isOwner()))return; $('#inbox').style.display='';
