@@ -143,3 +143,4 @@ settings:
   hide: true
   commit:
     identity: app
+    # Refresh Pages CMS configuration
