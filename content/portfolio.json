@@ -46,7 +46,12 @@
           "label": "High AI-adoption risk",
           "value": "80.8%"
         }
-      ]
+      ],
+      "screenshots": [
+        "/media/images/page1-executive-overview.png",
+        "/media/images/page2-ai-automation-analysis.png"
+      ],
+      "githubUrl": "https://github.com/frieo28/AI-Impact-Jobs-PowerBI"
     }
   ],
   "certificates": [
