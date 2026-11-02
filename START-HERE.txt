@@ -1,0 +1,17 @@
+ADIP DEB PORTFOLIO — START HERE
+
+1. Extract this ZIP.
+2. Open your GitHub portfolio repository (for example, frieo28.github.io).
+3. Upload the CONTENTS of this extracted folder to the repository root, replacing the old index.html when GitHub asks.
+   IMPORTANT: index.html, .pages.yml, and the content folder must be directly in the repository root.
+4. Commit the changes.
+5. Keep GitHub Pages publishing from main / (root).
+6. Open https://app.pagescms.org and sign in with the GitHub account that owns the repository.
+7. Install/authorize the Pages CMS GitHub App for this repository only.
+8. Select the repository and main branch. Open Portfolio content.
+9. Edit projects/certificates, add new entries, upload media, and save.
+10. Wait for GitHub Pages to publish the commit, then refresh your public portfolio.
+
+There is no Edit Site button or visitor upload control in the public website.
+The dashboard is separate and access is controlled by GitHub repository write permissions.
+Enable two-factor authentication on GitHub and do not grant anyone else write access.

@@ -1,0 +1,145 @@
+media:
+  - name: images
+    label: Images and screenshots
+    input: media/images
+    output: /media/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, gif]
+    rename: safe
+  - name: documents
+    label: Resume and videos
+    input: media/documents
+    output: /media/documents
+    categories: [document, video]
+    extensions: [pdf, mp4, webm, mov]
+    rename: safe
+content:
+  - name: portfolio
+    label: Portfolio content
+    type: file
+    path: content/portfolio.json
+    format: json
+    fields:
+      - name: profilePhoto
+        label: Profile photo
+        type: image
+        options:
+          media: images
+          path: profile
+      - name: resumeFile
+        label: Resume PDF
+        type: file
+        options:
+          media: documents
+          path: resume
+          extensions: [pdf]
+      - name: projects
+        label: Projects
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Project title
+            type: string
+            required: true
+          - name: category
+            label: Category / subtitle
+            type: string
+          - name: accent
+            label: Accent colour
+            type: select
+            options:
+              values: [gold, mint]
+          - name: technologies
+            label: Technologies (add one per item)
+            type: string
+            list: true
+          - name: overview
+            label: Overview
+            type: text
+          - name: deliverable
+            label: Deliverable
+            type: text
+          - name: pipeline
+            label: Process / approach
+            type: text
+          - name: query
+            label: SQL / DAX / technical detail
+            type: code
+          - name: queryNote
+            label: Technical detail note
+            type: text
+          - name: metrics
+            label: Key metrics (optional)
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: label
+                label: Metric label
+                type: string
+              - name: value
+                label: Metric value
+                type: string
+          - name: screenshots
+            label: Project screenshots
+            type: image
+            options:
+              media: images
+              path: projects
+              multiple:
+                max: 12
+              unique: true
+          - name: videos
+            label: Project videos
+            type: file
+            options:
+              media: documents
+              path: project-videos
+              categories: [video]
+              multiple:
+                max: 4
+          - name: githubUrl
+            label: GitHub project URL
+            type: string
+          - name: liveUrl
+            label: Live demo URL
+            type: string
+      - name: certificates
+        label: Certificates and achievements
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: issuer
+            label: Issuing organisation
+            type: string
+            required: true
+          - name: date
+            label: Date / event
+            type: string
+          - name: title
+            label: Certificate title
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+          - name: badge
+            label: Badge text
+            type: string
+          - name: proofImage
+            label: Certificate image
+            type: image
+            options:
+              media: images
+              path: certificates
+settings:
+  hide: true
+  commit:
+    identity: app
