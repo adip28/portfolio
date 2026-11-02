@@ -16,7 +16,12 @@
       "deliverable": "Two-page interactive Power BI dashboard with custom DAX KPIs, monthly sales trends, customer-segment insights and filters.",
       "pipeline": "1 · Cleaning & EDA: Missing values, duplicates, correlation analysis and outlier detection in Python (Pandas, NumPy).\n2 · SQL analysis: MySQL queries on sales trends, region-wise revenue, storage-variant performance and order-level metrics.\n3 · Dashboard: Custom DAX measures for dynamic KPIs with interactive filtering.",
       "query": "SELECT storage_variant, COUNT(order_id) AS orders, SUM(sales_amount) AS revenue\nFROM iphone_sales\nGROUP BY storage_variant\nORDER BY revenue DESC;",
-      "queryNote": "Illustrative query style used in this project."
+      "queryNote": "Illustrative query style used in this project.",
+      "screenshots": [
+        "/media/images/page-1.png",
+        "/media/images/page-2.png"
+      ],
+      "githubUrl": "https://github.com/frieo28/iPhone-sales-analytics"
     },
     {
       "title": "AI-Driven Job Layoff & Automation Risk Analysis",
