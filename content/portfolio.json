@@ -1,6 +1,4 @@
 {
-  "profilePhoto": "",
-  "resumeFile": "",
   "projects": [
     {
       "title": "iPhone Sales Analytics & Business Intelligence Dashboard",
@@ -17,12 +15,7 @@
       "deliverable": "Two-page interactive Power BI dashboard with custom DAX KPIs, monthly sales trends, customer-segment insights and filters.",
       "pipeline": "1 · Cleaning & EDA: Missing values, duplicates, correlation analysis and outlier detection in Python (Pandas, NumPy).\n2 · SQL analysis: MySQL queries on sales trends, region-wise revenue, storage-variant performance and order-level metrics.\n3 · Dashboard: Custom DAX measures for dynamic KPIs with interactive filtering.",
       "query": "SELECT storage_variant, COUNT(order_id) AS orders, SUM(sales_amount) AS revenue\nFROM iphone_sales\nGROUP BY storage_variant\nORDER BY revenue DESC;",
-      "queryNote": "Illustrative query style used in this project.",
-      "screenshots": [],
-      "videos": [],
-      "githubUrl": "",
-      "liveUrl": "",
-      "metrics": []
+      "queryNote": "Illustrative query style used in this project."
     },
     {
       "title": "AI-Driven Job Layoff & Automation Risk Analysis",
@@ -39,10 +32,6 @@
       "pipeline": "Power Query was used to prepare the data and create routine-task exposure and experience bands. DAX measures support executive KPIs and interactive filters.",
       "query": "High Risk Rate = DIVIDE( [High-Risk Records], [Total Records], 0 )",
       "queryNote": "Measures built: Total Records, High-Risk Records, High-Risk Rate, Avg Task Automation, AI Usage and AI Training Hours.",
-      "screenshots": [],
-      "videos": [],
-      "githubUrl": "",
-      "liveUrl": "",
       "metrics": [
         {
           "label": "Overall high-risk rate",
@@ -65,8 +54,7 @@
       "date": "AUG 2026",
       "title": "Data Analytics Essentials",
       "description": "Data analytics lifecycle, KPI formulation, exploratory analysis and decision optimisation.",
-      "badge": "✔ Verified",
-      "proofImage": ""
+      "badge": "✔ Verified"
     },
     {
       "issuer": "GOOGLE (GDG)",
@@ -74,23 +62,21 @@
       "title": "Real-World Data Science Hands-On with Python & ML",
       "description": "Hands-on predictive analysis and real-world dataset modelling with Python.",
       "badge": "✔ Verified",
-      "proofImage": ""
+      "proofImage": "/media/images/google-analyst.png"
     },
     {
       "issuer": "LERNX",
       "date": "JUN 2024",
       "title": "Python 3 Bootcamp",
       "description": "Core Python: data structures, control flow, functions and file handling.",
-      "badge": "✔ Verified",
-      "proofImage": ""
+      "badge": "✔ Verified"
     },
     {
       "issuer": "IIM SHILLONG",
       "date": "UNSTOP HOLIDAY FEST 2025",
       "title": "DRISHTI-NE Hackathon Semi-Finalist",
       "description": "Reached the semi-finals of the hackathon organised by IIM Shillong.",
-      "badge": "🏆 Semi-finalist",
-      "proofImage": ""
+      "badge": "🏆 Semi-finalist"
     }
   ]
 }
