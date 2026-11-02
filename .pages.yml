@@ -68,7 +68,7 @@ content:
             type: text
           - name: query
             label: SQL / DAX / technical detail
-            type: code
+            type: text
           - name: queryNote
             label: Technical detail note
             type: text
